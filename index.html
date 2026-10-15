@@ -1,0 +1,282 @@
+
+<div id="sylhet-tour">
+  <style>
+    #sylhet-tour {
+      --white: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #064e3b;
+    }
+
+    #sylhet-tour * {
+      box-sizing: border-box;
+    }
+
+    #sylhet-tour .tour-hero {
+      position: relative;
+      min-height: 570px;
+      padding: 65px 18px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(180deg,
+          rgba(0, 35, 26, .35),
+          rgba(0, 35, 26, .83)),
+        url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+    }
+
+    #sylhet-tour .tour-label {
+      display: inline-block;
+      padding: 9px 18px;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 50px;
+      background: rgba(255,255,255,.12);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    #sylhet-tour h1 {
+      color: #fff;
+      font-size: clamp(36px, 7vw, 70px);
+      line-height: 1.1;
+      margin: 25px 0 12px;
+      font-weight: 800;
+      text-shadow: 0 3px 15px rgba(0,0,0,.35);
+    }
+
+    #sylhet-tour .tour-subtitle {
+      color: #f0fdf4;
+      font-size: clamp(15px, 2.5vw, 20px);
+      line-height: 1.7;
+      margin: 0 auto 30px;
+      max-width: 600px;
+    }
+
+    #sylhet-tour .tour-date {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 26px;
+      color: #fef3c7;
+    }
+
+    #sylhet-tour .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      width: 100%;
+      max-width: 620px;
+    }
+
+    #sylhet-tour .time-box {
+      padding: 22px 8px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 15px;
+      background: rgba(255,255,255,.14);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    #sylhet-tour .time-number {
+      display: block;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.2;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #sylhet-tour .time-label {
+      display: block;
+      margin-top: 9px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #ecfdf5;
+    }
+
+    #sylhet-tour .tour-message {
+      min-height: 25px;
+      margin: 24px 0 0;
+      font-size: 15px;
+      color: #fef3c7;
+      font-weight: bold;
+    }
+
+    #sylhet-tour .tour-details {
+      padding: 30px 18px;
+      background: #f0fdf4;
+      color: #14532d;
+    }
+
+    #sylhet-tour .tour-details h2 {
+      color: #166534;
+      font-size: 24px;
+      margin: 0 0 12px;
+    }
+
+    #sylhet-tour .tour-details p {
+      margin: 8px 0;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    #sylhet-tour .tour-footer {
+      padding: 17px 12px;
+      background: #052e24;
+      color: #d1fae5;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 480px) {
+      #sylhet-tour {
+        border-radius: 10px;
+      }
+
+      #sylhet-tour .tour-hero {
+        min-height: 520px;
+        padding: 45px 12px;
+      }
+
+      #sylhet-tour .countdown {
+        gap: 6px;
+      }
+
+      #sylhet-tour .time-box {
+        padding: 17px 3px;
+        border-radius: 10px;
+      }
+
+      #sylhet-tour .time-label {
+        font-size: 9px;
+        letter-spacing: .5px;
+      }
+
+      #sylhet-tour .tour-date {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <section class="tour-hero">
+    <div class="tour-label">Our Next Adventure</div>
+
+    <h1>Sylhet Tour 2026</h1>
+
+    <p class="tour-subtitle">
+      Nature is calling! Get ready to explore the
+      beautiful green landscapes, rivers and hills of Sylhet.
+    </p>
+
+    <div class="tour-date">
+      30 October 2026
+    </div>
+
+    <div class="countdown" aria-label="Tour countdown">
+      <div class="time-box">
+        <span class="time-number" id="st-days">00</span>
+        <span class="time-label">DAYS</span>
+      </div>
+
+      <div class="time-box">
+        <span class="time-number" id="st-hours">00</span>
+        <span class="time-label">HOURS</span>
+      </div>
+
+      <div class="time-box">
+        <span class="time-number" id="st-minutes">00</span>
+        <span class="time-label">MINUTES</span>
+      </div>
+
+      <div class="time-box">
+        <span class="time-number" id="st-seconds">00</span>
+        <span class="time-label">SECONDS</span>
+      </div>
+    </div>
+
+    <p class="tour-message" id="st-message" aria-live="polite">
+      The countdown to our adventure has begun!
+    </p>
+  </section>
+
+  <section class="tour-details">
+    <h2>Adventure Awaits!</h2>
+    <p>
+      <strong>Destination:</strong>
+      Sylhet, Bangladesh
+    </p>
+    <p>
+      <strong>Tour Date:</strong>
+      Friday, 30 October 2026
+    </p>
+    <p>
+      Pack your bags, bring your smiles and get ready
+      for a memorable journey with friends!
+    </p>
+  </section>
+
+  <div class="tour-footer">
+    Created for our Sylhet Tour 2026
+    <br />
+    Good Friends • Beautiful Nature • Great Memories
+  </div>
+
+  <script>
+    (function () {
+      var root = document.getElementById("sylhet-tour");
+      if (!root) return;
+
+      // Tour starts at midnight Bangladesh time (UTC+6).
+      var target = new Date("2026-10-30T00:00:00+06:00").getTime();
+
+      var daysEl = root.querySelector("#st-days");
+      var hoursEl = root.querySelector("#st-hours");
+      var minutesEl = root.querySelector("#st-minutes");
+      var secondsEl = root.querySelector("#st-seconds");
+      var messageEl = root.querySelector("#st-message");
+
+      function pad(value) {
+        return String(value).padStart(2, "0");
+      }
+
+      function updateCountdown() {
+        var now = Date.now();
+        var distance = target - now;
+
+        if (distance <= 0) {
+          daysEl.textContent = "00";
+          hoursEl.textContent = "00";
+          minutesEl.textContent = "00";
+          secondsEl.textContent = "00";
+
+          messageEl.textContent =
+            distance > -86400000
+              ? "It's tour day! Let the adventure begin!"
+              : "Our scheduled tour date has arrived. Have a great trip!";
+
+          return;
+        }
+
+        var days = Math.floor(distance / 86400000);
+        var hours = Math.floor((distance % 86400000) / 3600000);
+        var minutes = Math.floor((distance % 3600000) / 60000);
+        var seconds = Math.floor((distance % 60000) / 1000);
+
+        daysEl.textContent = pad(days);
+        hoursEl.textContent = pad(hours);
+        minutesEl.textContent = pad(minutes);
+        secondsEl.textContent = pad(seconds);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
+</div>
